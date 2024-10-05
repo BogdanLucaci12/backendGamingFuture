@@ -1,6 +1,6 @@
 const cluster=require('cluster')
 const numCPUs = require('os').cpus().length;
-const PORT = process.env.PORT_DB || 8626;
+const PORT = process.env.PORT || 3000;
 const app=require('./app')
 
 if(cluster.isMaster){

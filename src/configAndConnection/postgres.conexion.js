@@ -5,7 +5,7 @@ const adminPool = new Pool({
     host: process.env.HOST,
     database: process.env.DATABASE,
     password: process.env.PASSWORDADMIN,
-    port: process.env.PORT,
+    port: process.env.PORT_DB,
 })
 
 const employeePool = new Pool({
@@ -13,7 +13,7 @@ const employeePool = new Pool({
     host: process.env.HOST,
     database: process.env.DATABASE,
     password: process.env.PASSWORDEMPLOYEE,
-    port: process.env.PORT,
+    port: process.env.PORT_DB,
 });
 
 const publicPool = new Pool({
@@ -21,7 +21,7 @@ const publicPool = new Pool({
     host: process.env.HOST,
     database: process.env.DATABASE,
     password: process.env.PASSWORDPUBLIC,
-    port: process.env.PORT,
+    port: process.env.PORT_DB,
 });
 
 module.exports = { adminPool, employeePool, publicPool }
