@@ -26,4 +26,6 @@ const config= {
   "client_x509_cert_url": FIREBASE_CLIENT_X509,
   "universe_domain": FIREBASE_UNIVERSE_DOMAIN
 }
+console.log(config)
+
 module.exports=config
