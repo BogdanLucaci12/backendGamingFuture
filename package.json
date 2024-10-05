@@ -6,7 +6,11 @@
   "scripts": {
     "test": "jest",
     "server": "node server.js",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "20"
   },
   "author": "",
   "license": "ISC",
