@@ -1,4 +1,5 @@
 const { Pool } = require('pg')
+import { HttpsProxyAgent } from 'https-proxy-agent';
 const proxy = process.env.QUOTAGUARDSTATIC_URL;
 const agent = new HttpsProxyAgent(proxy);
 
@@ -9,10 +10,7 @@ const adminPool = new Pool({
     database: process.env.DATABASE,
     password: process.env.PASSWORDADMIN,
     port: process.env.PORT_DB,
-    ssl: {
-        rejectUnauthorized: false,
-        agent: agent
-    }
+
 })
 
 const employeePool = new Pool({
