@@ -1,9 +1,8 @@
 const { Pool } = require('pg')
 const HttpsProxyAgent = require('https-proxy-agent');
 const proxy = process.env.QUOTAGUARDSTATIC_URL;
-console.log(proxy)
 const agent = new HttpsProxyAgent(proxy);
-console.log(HttpsProxyAgent, agent)
+
 require('dotenv').config()
 const adminPool = new Pool({
     user: process.env.USERADMIN,
@@ -11,7 +10,10 @@ const adminPool = new Pool({
     database: process.env.DATABASE,
     password: process.env.PASSWORDADMIN,
     port: process.env.PORT_DB,
-
+    ssl: {
+        rejectUnauthorized: false,
+        agent: agent
+    }
 })
 
 const employeePool = new Pool({
