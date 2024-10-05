@@ -39,4 +39,13 @@ const publicPool = new Pool({
     }
 });
 
+adminPool.connect()
+    .then(client => {
+        console.log('Conexiune reușită la baza de date locală!');
+        client.release(); // Eliberează clientul după utilizare
+    })
+    .catch(err => {
+        console.error('Eroare la conectarea la baza de date:', err);
+    });
+
 module.exports = { adminPool, employeePool, publicPool }
