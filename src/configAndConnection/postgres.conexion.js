@@ -1,7 +1,7 @@
 const { Pool } = require('pg')
 const HttpsProxyAgent = require('https-proxy-agent');
 const proxy = process.env.QUOTAGUARDSTATIC_URL;
-console.log(HttpsProxyAgent)
+console.log(proxy)
 const agent = new HttpsProxyAgent(proxy);
 console.log(HttpsProxyAgent, agent)
 require('dotenv').config()
