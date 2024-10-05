@@ -1,5 +1,5 @@
 const { Pool } = require('pg')
-import { HttpsProxyAgent } from 'https-proxy-agent';
+const HttpsProxyAgent = require('https-proxy-agent');
 const proxy = process.env.QUOTAGUARDSTATIC_URL;
 const agent = new HttpsProxyAgent(proxy);
 
